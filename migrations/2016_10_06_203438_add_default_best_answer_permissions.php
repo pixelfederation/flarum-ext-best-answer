@@ -2,7 +2,7 @@
 
 use Illuminate\Database\ConnectionInterface;
 $permissionAttributes = [
-    'group_id' => 3, // Default group ID of members
+    'group_id' => 4, // Mods
     'permission' => 'discussion.selectBestAnswer',
 ];
 return [
