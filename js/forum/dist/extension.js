@@ -10,7 +10,7 @@ System.register('wiwatSrt/bestAnswer/addBestAnswerAction', ['flarum/app', 'flaru
             var post = this.props.post;
             var discussion = this.props.post.discussion();
 
-            if (post.isHidden() || !discussion.canSelectBestAnswer() || !app.session.user || discussion.attribute('startUserId') != app.session.user.id()) return;
+            if (post.isHidden() || !app.session.user || !(discussion.canSelectBestAnswer() || discussion.attribute('startUserId') == app.session.user.id())) return;
 
             var isBestAnswer = discussion.bestAnswerPost() && discussion.bestAnswerPost() == post;
             post.pushAttributes({ isBestAnswer: isBestAnswer });
